@@ -1,0 +1,7 @@
+default_tracking_uri: ./mlruns
+experiment_name: gesture_vision_experiments
+output_dir: experiments
+artifacts_dir: artifacts
+run_all:
+  - configs/hand_landmarks.yaml
+  - configs/pose_estimation.yaml

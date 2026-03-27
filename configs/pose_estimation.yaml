@@ -1,0 +1,30 @@
+run:
+  name: pose_estimation_sweep_a
+
+data:
+  source:
+    path: data/operator_sequences
+    stream: lane_02
+    sample_count: 30
+
+preprocessing:
+  resize: [256, 256]
+  normalize: true
+
+roi:
+  hand_roi: true
+  chest_roi: true
+
+features:
+  temporal_window: 12
+  include_geometry: true
+
+model:
+  name: pose_estimation
+  params:
+    backbone: lightweight_pose_net
+    confidence_threshold: 0.4
+
+training:
+  epochs: 2
+  batch_size: 6

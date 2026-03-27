@@ -1,0 +1,30 @@
+run:
+  name: video_classifier_exploratory
+
+data:
+  source:
+    path: data/operator_sequences
+    stream: lane_03
+    sample_count: 18
+
+preprocessing:
+  resize: [160, 160]
+  normalize: true
+
+roi:
+  hand_roi: true
+  chest_roi: false
+
+features:
+  temporal_window: 16
+  include_geometry: false
+
+model:
+  name: video_classifier
+  params:
+    architecture: temporal_cnn
+    clip_length: 16
+
+training:
+  epochs: 1
+  batch_size: 4
