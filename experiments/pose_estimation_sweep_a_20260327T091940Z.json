@@ -1,0 +1,60 @@
+{
+  "run_name": "pose_estimation_sweep_a",
+  "model_name": "pose_estimation",
+  "train_output": {
+    "model_name": "pose_estimation",
+    "family": "pose",
+    "epochs": 2,
+    "batch_size": 6,
+    "seen_samples": 30,
+    "quality_signal": 0.7,
+    "model_params": {
+      "backbone": "lightweight_pose_net",
+      "confidence_threshold": 0.4
+    }
+  },
+  "metrics": {
+    "gesture_accuracy": 0.7,
+    "flick_f1": 0.65,
+    "badge_roi_iou": 0.6
+  },
+  "config": {
+    "run": {
+      "name": "pose_estimation_sweep_a"
+    },
+    "data": {
+      "source": {
+        "path": "data/operator_sequences",
+        "stream": "lane_02",
+        "sample_count": 30
+      }
+    },
+    "preprocessing": {
+      "resize": [
+        256,
+        256
+      ],
+      "normalize": true
+    },
+    "roi": {
+      "hand_roi": true,
+      "chest_roi": true
+    },
+    "features": {
+      "temporal_window": 12,
+      "include_geometry": true
+    },
+    "model": {
+      "name": "pose_estimation",
+      "params": {
+        "backbone": "lightweight_pose_net",
+        "confidence_threshold": 0.4
+      }
+    },
+    "training": {
+      "epochs": 2,
+      "batch_size": 6
+    }
+  },
+  "mlflow_run_id": "a60229bd4a324501ad606e3fb38b357f"
+}

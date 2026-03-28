@@ -1,0 +1,14 @@
+artifact_uri: file:D:/Coles-AIOps-codex-create-python-project-scaffold-for-gesture-recognition/mlruns/590282665179918134/892ebec0ef884b63ba7ace9e60d2e5fe/artifacts
+end_time: 1774603229588
+entry_point_name: ''
+experiment_id: '590282665179918134'
+lifecycle_stage: active
+run_id: 892ebec0ef884b63ba7ace9e60d2e5fe
+run_name: hand_landmarks_baseline
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774603229471
+status: 3
+tags: []
+user_id: dhruv

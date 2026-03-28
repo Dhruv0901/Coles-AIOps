@@ -1,0 +1,14 @@
+artifact_uri: file:D:/Coles-AIOps-codex-create-python-project-scaffold-for-gesture-recognition/mlruns/590282665179918134/da1324aea0cb44899feb5d42d6faca1e/artifacts
+end_time: 1774603229734
+entry_point_name: ''
+experiment_id: '590282665179918134'
+lifecycle_stage: active
+run_id: da1324aea0cb44899feb5d42d6faca1e
+run_name: pose_estimation_sweep_a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1774603229615
+status: 3
+tags: []
+user_id: dhruv

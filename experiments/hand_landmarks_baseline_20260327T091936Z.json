@@ -1,0 +1,60 @@
+{
+  "run_name": "hand_landmarks_baseline",
+  "model_name": "mediapipe_hand_landmarks",
+  "train_output": {
+    "model_name": "mediapipe_hand_landmarks",
+    "family": "keypoint",
+    "epochs": 1,
+    "batch_size": 8,
+    "seen_samples": 24,
+    "quality_signal": 0.64,
+    "model_params": {
+      "min_detection_confidence": 0.5,
+      "min_tracking_confidence": 0.5
+    }
+  },
+  "metrics": {
+    "gesture_accuracy": 0.64,
+    "flick_f1": 0.59,
+    "badge_roi_iou": 0.57
+  },
+  "config": {
+    "run": {
+      "name": "hand_landmarks_baseline"
+    },
+    "data": {
+      "source": {
+        "path": "data/operator_sequences",
+        "stream": "lane_01",
+        "sample_count": 24
+      }
+    },
+    "preprocessing": {
+      "resize": [
+        224,
+        224
+      ],
+      "normalize": true
+    },
+    "roi": {
+      "hand_roi": true,
+      "chest_roi": true
+    },
+    "features": {
+      "temporal_window": 8,
+      "include_geometry": true
+    },
+    "model": {
+      "name": "mediapipe_hand_landmarks",
+      "params": {
+        "min_detection_confidence": 0.5,
+        "min_tracking_confidence": 0.5
+      }
+    },
+    "training": {
+      "epochs": 1,
+      "batch_size": 8
+    }
+  },
+  "mlflow_run_id": "138ace22dbb9471aa3ce417da027c999"
+}
