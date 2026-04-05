@@ -8,8 +8,8 @@ import mediapipe as mp
 
 HAND_MODEL_PATH = "hand_landmarker.task"
 HAND_MODEL_URL = "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task"
-FACE_MODEL_PATH = "face_detector.task"
-FACE_MODEL_URL = "https://storage.googleapis.com/mediapipe-models/face_detector/face_detector/float16/1/face_detector.task"
+FACE_MODEL_PATH = "blaze_face_short_range.tflite"
+FACE_MODEL_URL = "https://storage.googleapis.com/mediapipe-models/face_detector/blaze_face_short_range/float16/1/blaze_face_short_range.tflite"
 CAMERA_INDEX = 0
 MAX_NUM_HANDS = 2
 MAX_NUM_FACES = 10
@@ -56,10 +56,18 @@ HAND_CONNECTIONS = [
 ]
 
 
-def ensure_model_exists(model_path, model_url):
-    if os.path.exists(model_path):
-        return
-    urllib.request.urlretrieve(model_url, model_path)
+# def ensure_model_exists(model_path, model_url):
+#     if os.path.exists(model_path):
+#         return
+
+#     print(f"Downloading model: {model_path}")
+#     try:
+#         urllib.request.urlretrieve(model_url, model_path)
+#     except Exception as exc:
+#         raise RuntimeError(f"Failed to download model from {model_url}") from exc
+
+#     if not os.path.exists(model_path):
+#         raise RuntimeError(f"Model was not created: {model_path}")
 
 
 def create_face_detector():
@@ -230,8 +238,8 @@ def to_pixel_landmarks(hand_landmarks, frame_w, frame_h):
 
 
 def main():
-    ensure_model_exists(HAND_MODEL_PATH, HAND_MODEL_URL)
-    ensure_model_exists(FACE_MODEL_PATH, FACE_MODEL_URL)
+    # ensure_model_exists(HAND_MODEL_PATH, HAND_MODEL_URL)
+    # ensure_model_exists(FACE_MODEL_PATH, FACE_MODEL_URL)
 
     cap = cv2.VideoCapture(CAMERA_INDEX)
     if not cap.isOpened():
@@ -325,3 +333,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
